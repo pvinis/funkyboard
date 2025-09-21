@@ -9,6 +9,7 @@ This is a React Native & Expo app built with modern tooling and the New Architec
 ## Development Commands
 
 ### Package Management & Development
+
 ```bash
 # Install dependencies and setup
 pnpm install && pnpm dev:setup
@@ -27,6 +28,7 @@ pnpm web
 ```
 
 ### Code Quality & Testing
+
 ```bash
 # Type checking
 pnpm tsc:check
@@ -44,16 +46,16 @@ pnpm format
 ```
 
 ### Internationalization
+
 ```bash
 # Setup i18n (run after changes to fbt strings)
 pnpm dev:setup
-pnpm fbtee:all
-pnpm fbtee collect && pnpm fbtee translate
 ```
 
 ## Architecture & Code Organization
 
 ### Directory Structure
+
 - `src/app/` - Expo Router file-based routing with app directory
   - `(app)/(tabs)/` - Tab-based navigation screens
   - `_layout.tsx` - Root layout with providers
@@ -70,9 +72,8 @@ pnpm fbtee collect && pnpm fbtee translate
 2. **Styling**: NativeWind (Tailwind CSS for React Native) with custom color system
 3. **State Management**: React Context with custom hooks (useViewerContext)
 4. **Storage**: MMKV for local storage and user settings
-5. **Internationalization**: fbtee for Facebook's FBT i18n system
-6. **UI Components**: Custom UI components in `src/ui/` that wrap native components
-7. **Navigation**: Tab-based navigation with nested stack navigation
+5. **UI Components**: Custom UI components in `src/ui/` that wrap native components
+6. **Navigation**: Tab-based navigation with nested stack navigation
 
 ### Important Code Patterns
 
@@ -91,8 +92,6 @@ pnpm fbtee collect && pnpm fbtee translate
 ## Configuration
 
 - **TypeScript**: Strict mode with nodenext module resolution
-- **ESLint**: Custom @nkzw/eslint-config with fbtee plugin
-- **Babel**: React Compiler enabled with fbtee preset
 - **Expo**: New Architecture enabled with React Canary and React Compiler experiments
 - **Testing**: Vitest with React Native support
 
