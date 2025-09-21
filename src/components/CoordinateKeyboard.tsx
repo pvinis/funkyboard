@@ -442,7 +442,7 @@ const baseKeys: Array<CoordinateKey> = [
   },
 ];
 
-// Create the keyboard keys with the qaws combination
+// Create the keyboard keys with the qaws and erdf combinations
 const keyboardKeys: Array<CoordinateKey> = [
   // Combined QAWS key using outer boundary
   {
@@ -451,8 +451,15 @@ const keyboardKeys: Array<CoordinateKey> = [
     corners: findCompletePerimeter(['q', 'a', 'w', 's'], baseKeys),
   },
 
-  // Remove individual q, a, w, s keys and keep the rest
-  ...baseKeys.filter(key => !['q', 'a', 'w', 's'].includes(key.id)),
+  // Combined ERDF key using outer boundary
+  {
+    id: 'erdf',
+    character: 'erdf', // Show all four letters
+    corners: findCompletePerimeter(['e', 'r', 'd', 'f'], baseKeys),
+  },
+
+  // Remove individual q, a, w, s, e, r, d, f keys and keep the rest
+  ...baseKeys.filter(key => !['q', 'a', 'w', 's', 'e', 'r', 'd', 'f'].includes(key.id)),
 ];
 
 export default function CoordinateKeyboard({ onKeyPress }: CoordinateKeyboardProps) {
